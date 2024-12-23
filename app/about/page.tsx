@@ -1,9 +1,21 @@
+import db from "@/utils/db";
 
-export default function AboutPage() {
-    return (
-     <div>
-      About page 
-     </div>
-    );
-  }
-  
+async function AboutPage() {
+  const profile = await db.testProfile.create({
+    data:{
+      name:"random name",
+      
+    }
+
+  })
+  const users = await db.testProfile.findMany()
+return<div>
+
+   {users.map((user) =>{
+    return <h1 key={user.id}>{user.name}</h1>
+   })}
+</div>
+
+}
+
+export default AboutPage;
