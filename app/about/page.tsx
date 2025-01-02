@@ -1,19 +1,17 @@
-import db from "@/utils/db";
+// import db from "@/utils/db";
 
 async function AboutPage() {
-  const profile = await db.testProfile.create({
-    data:{
-      name:"random name",
+  // const profile = await db.testProfile.create({
+  //   data:{
+  //     name:"random name",
       
-    }
+  //   }
 
-  })
-  const users = await db.testProfile.findMany()
+  // })
+  // const users = await db.testProfile.findMany()
 return<div>
 
-   {users.map((user) =>{
-    return <h1 key={user.id}>{user.name}</h1>
-   })}
+   hello there
 </div>
 
 }
